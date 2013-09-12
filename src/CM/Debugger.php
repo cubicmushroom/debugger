@@ -80,7 +80,7 @@ if (!class_exists('CM_Debugger')) {
          *
          * @return void
          */
-        static public function vd2el($var) {
+        static public function vd2el($var, $bt = null) {
             if (empty($bt)) {
                 $bt = debug_backtrace();
             }
