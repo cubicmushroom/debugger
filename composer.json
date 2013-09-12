@@ -1,0 +1,21 @@
+{
+    "name": "cubicmushroom/debugger",
+    "description": "Debugging helper library",
+    "require-dev": {
+        "phpunit/phpunit": "3.7.x-dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Toby Griffiths",
+            "email": "toby@cubicmushroom.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}
