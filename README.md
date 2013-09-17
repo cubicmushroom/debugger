@@ -18,6 +18,7 @@ Debugging methods
 
 The following methods are made available by this library…
 
+* `bt()` - Displays a backtrace of class methods/functions called
 * `vd()` - Performs a formatted `var_dump()`
 * `dl()` - Terminates the script, echoing the file & line that it was terminated at
 * `vdl()` - Performs a `vd()` followed by a `dl()`

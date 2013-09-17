@@ -63,3 +63,12 @@ if (!function_exists('vdl2el')) {
         CM_Debugger::vdl2el($var);
     }
 }
+
+
+if (!function_exists('bt')) {
+    function bt() {
+        $bt = debug_backtrace();
+        array_shift($bt);
+        CM_Debugger::bt($bt);
+    }
+}

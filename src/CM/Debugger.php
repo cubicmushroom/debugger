@@ -123,5 +123,29 @@ if (!class_exists('CM_Debugger')) {
             vdl($var, $bt);
             error_log(ob_get_clean());
         }
+
+        /**
+         * Displays a backtrace list
+         *
+         * @param array $bt (optional) Backtrace.  If not provided will be generated
+         *
+         * @return void
+         */
+        static function bt(array $bt = null) {
+            if (is_null($bt)) {
+                $bt = debug_backtrace();
+            }
+            $trace_arr = array();
+            foreach ($bt as $trace) {
+                $trace_arr[] = sprintf(
+                    '%s%s() - line %d',
+                    !empty($trace['class']) ? $trace['class'] . '::' : '',
+                    $trace['function'],
+                    $trace['line']
+                );
+            }
+
+            vd($trace_arr);
+        }
     }
 }
