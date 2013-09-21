@@ -135,17 +135,22 @@ if (!class_exists('CM_Debugger')) {
             if (is_null($bt)) {
                 $bt = debug_backtrace();
             }
+
+            $trace_to_report = debug_backtrace();
+            $trace_to_report = array_slice($trace_to_report, 2);
+
             $trace_arr = array();
-            foreach ($bt as $trace) {
+            foreach ($trace_to_report as $trace) {
                 $trace_arr[] = sprintf(
-                    '%s%s() - line %d',
+                    '%s%s() - %s line %d',
                     !empty($trace['class']) ? $trace['class'] . '::' : '',
                     $trace['function'],
+                    basename( $trace['file'] ),
                     $trace['line']
                 );
             }
 
-            vd($trace_arr);
+            vd($trace_arr, $bt);
         }
     }
 }

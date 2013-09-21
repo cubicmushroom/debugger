@@ -51,7 +51,6 @@ if (!function_exists('dl2el')) {
     function dl2el($bt = null) {
         if (is_null($bt)) {
             $bt = debug_backtrace();
-            // array_shift($bt);
         }
         CM_Debugger::dl2el($bt);
     }
@@ -68,7 +67,6 @@ if (!function_exists('vdl2el')) {
 if (!function_exists('bt')) {
     function bt() {
         $bt = debug_backtrace();
-        array_shift($bt);
         CM_Debugger::bt($bt);
     }
 }
